@@ -33,7 +33,7 @@ $settings | add-member -force -name "php.executablePath" -value "C:\Bitnami\wamp
 $settings | add-member -force -name "php.validate.executablePath" -value "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" -MemberType NoteProperty
 
 "Saving user settings"
-$settings | ConvertTo-Json -depth 50 | ForEach-Object { $_.Replace("\u0027", "'") } | Out-File $env:appdata\Code\User\settings.json
+$settings | ConvertTo-Json -depth 50 | ForEach-Object { $_.Replace("\u0027", "'") } | Out-File $env:appdata\Code\User\settings.json -Encoding utf8
 
 pause
 
