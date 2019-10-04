@@ -25,12 +25,12 @@ catch {
 $settings = Get-Content -Raw -Path $env:appdata\Code\User\settings.json -Encoding UTF8 | ConvertFrom-Json
 
 "Updating user settings"
-$settings.'editor.wordWrap' = "on"
-$settings.'open-php-html-js-in-browser.selectedBrowser' = "Chrome" 
-$settings.'open-php-html-js-in-browser.customUrlToOpen' = 'http://localhost:8888/${fileBasename}' 
-$settings.'open-php-html-js-in-browser.documentRootFolder' = "C:\Bitnami\wampstack-7.3.8-0\apache2\htdocs" 
-$settings.'php.executablePath' = "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" 
-$settings.'php.validate.executablePath' = "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" 
+$settings | add-member -force -name "editor.wordWrap" -value "on" -MemberType NoteProperty
+$settings | add-member -force -name "open-php-html-js-in-browser.selectedBrowser" -value "Chrome" -MemberType NoteProperty
+$settings | add-member -force -name "open-php-html-js-in-browser.customUrlToOpen" -value 'http://localhost:8888/${fileBasename}' -MemberType NoteProperty
+$settings | add-member -force -name "open-php-html-js-in-browser.documentRootFolder" -value "C:\Bitnami\wampstack-7.3.8-0\apache2\htdocs" -MemberType NoteProperty
+$settings | add-member -force -name "php.executablePath" -value "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" -MemberType NoteProperty
+$settings | add-member -force -name "php.validate.executablePath" -value "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" -MemberType NoteProperty
 
 "Saving user settings"
 $settings | ConvertTo-Json -depth 50 | ForEach-Object { $_.Replace("\u0027", "'") } | Out-File $env:appdata\Code\User\settings.json
