@@ -15,7 +15,7 @@ try {
     code --install-extension rifi2k.format-html-in-php --force
     code --install-extension Zignd.html-css-class-completion --force
 
-    "Installation is complete!"
+    "Installation complete!"
 }
 catch {
     Write-Host $_.Exception.Message
