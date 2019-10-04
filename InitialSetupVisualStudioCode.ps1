@@ -1,5 +1,6 @@
 "Killing all Visual Studio Code instances.."
-Stop-Process -Name "code"
+
+Stop-Process -Name "code" -ErrorAction SilentlyContinue
 
 "Installing VS Code Extensions..."
 
