@@ -14,6 +14,7 @@ try {
     code --install-extension PrimaFuture.open-php-html-js-in-browser --force
     code --install-extension rifi2k.format-html-in-php --force
     code --install-extension Zignd.html-css-class-completion --force
+    code --install-extension ms-vsliveshare.vsliveshare --force
 
     "Installation complete!"
 }
