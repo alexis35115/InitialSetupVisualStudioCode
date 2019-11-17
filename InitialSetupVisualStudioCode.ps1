@@ -35,7 +35,6 @@ $settings | add-member -force -name "php.validate.executablePath" -value "C:\Bit
 
 $settings | add-member -force -name "terminal.integrated.shell.windows" -value "C:\Windows\System32\cmd.exe" -MemberType NoteProperty
 
-
 $list = New-Object System.Collections.ArrayList
 $list.Add("/K")
 $list.Add("chcp 65001")
