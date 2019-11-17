@@ -33,6 +33,15 @@ $settings | add-member -force -name "open-php-html-js-in-browser.documentRootFol
 $settings | add-member -force -name "php.executablePath" -value "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" -MemberType NoteProperty
 $settings | add-member -force -name "php.validate.executablePath" -value "C:\Bitnami\wampstack-7.3.8-0\php\php.exe" -MemberType NoteProperty
 
+$settings | add-member -force -name "terminal.integrated.shell.windows" -value "C:\Windows\System32\cmd.exe" -MemberType NoteProperty
+
+
+$list = New-Object System.Collections.ArrayList
+$list.Add("/K")
+$list.Add("chcp 65001")
+
+$settings | add-member -force -name "terminal.integrated.shellArgs.windows" -value $list -MemberType NoteProperty
+
 "Saving user settings"
 $settings | ConvertTo-Json -depth 50 | ForEach-Object { $_.Replace("\u0027", "'") } | Out-File $env:appdata\Code\User\settings.json -Encoding utf8
 
