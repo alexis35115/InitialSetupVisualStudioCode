@@ -37,7 +37,7 @@ $settings | add-member -force -name "terminal.integrated.shell.windows" -value "
 
 $list = New-Object System.Collections.ArrayList
 $list.Add("/K")
-$list.Add("chcp 65001")
+$list.Add("chcp 65001") 
 
 $settings | add-member -force -name "terminal.integrated.shellArgs.windows" -value $list -MemberType NoteProperty
 
