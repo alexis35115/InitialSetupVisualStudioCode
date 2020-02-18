@@ -33,6 +33,7 @@ else{
 }
 
 "Updating user settings"
+$settings | add-member -force -name "editor.tabCompletion" -value "on" -MemberType NoteProperty
 $settings | add-member -force -name "editor.wordWrap" -value "on" -MemberType NoteProperty
 $settings | add-member -force -name "open-php-html-js-in-browser.selectedBrowser" -value "Chrome" -MemberType NoteProperty
 $settings | add-member -force -name "open-php-html-js-in-browser.customUrlToOpen" -value 'http://localhost:8888/${fileBasename}' -MemberType NoteProperty
