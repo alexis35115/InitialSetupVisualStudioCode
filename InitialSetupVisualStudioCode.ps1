@@ -25,7 +25,12 @@ catch {
 }
 
 "Getting user settings"
-$settings = Get-Content -Raw -Path $env:appdata\Code\User\settings.json -Encoding UTF8 | ConvertFrom-Json
+if(![System.IO.File]::Exists($path)){
+    $settings = "{}" | ConvertFrom-Json
+}
+else{
+    $settings = Get-Content -Raw -Path $env:appdata\Code\User\settings.json -Encoding UTF8 | ConvertFrom-Json
+}
 
 "Updating user settings"
 $settings | add-member -force -name "editor.wordWrap" -value "on" -MemberType NoteProperty
