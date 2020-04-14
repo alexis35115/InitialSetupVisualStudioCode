@@ -17,6 +17,7 @@ try {
     code --install-extension ms-vsliveshare.vsliveshare --force
     code --install-extension zignd.html-css-class-completion --force
     code --install-extension liximomo.sftp --force
+    code --install-extension bmewburn.vscode-intelephense-client --force
 
     "Installation complete!"
 }
